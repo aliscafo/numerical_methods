@@ -157,7 +157,13 @@ pylab.plot(x_list_diff4_log, y_list_diff4_log, 'b')
 pylab.savefig("f2_diff_cheb_log.png")
 
 
-
+pylab.clf()
+pylab.plot(x_list_diff_log, y_list_diff_log, 'b')
+pylab.plot(x_list_diff2_log, y_list_diff2_log, 'g')
+pylab.plot(x_list_diff3_log, y_list_diff3_log, 'r')
+pylab.plot(x_list_diff4_log, y_list_diff4_log, 'm')
+pylab.legend ( ("f1 uniform", "f1 chebyshev", "f2 uniform", "f2 chebyshev") )
+pylab.savefig("all_charts.png")
 
 
 
