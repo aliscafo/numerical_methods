@@ -101,21 +101,30 @@ pylab.clf()
 pylab.plot(x_list_diff, y_list_diff, 'b')
 pylab.savefig("f1_diff.png")
 
+
+x_list_diff_log = [i for i in range(5, 51)]
+y_list_diff_log = [math.log10(find_max(fs, x0 - 5, x0 + 5, nt)) for nt in x_list_diff_log]
+ 
+pylab.clf()
+pylab.plot(x_list_diff_log, y_list_diff_log, 'b')
+pylab.savefig("f1_diff_log.png")
+
 # task C
 x_list_diff2 = [i for i in range(5, 51)]
-y_list_diff2 = [find_max_chebushev(fs, x0 - 5, x0 + 5, nt) for nt in x_list_diff]
+y_list_diff2 = [find_max_chebushev(fs, x0 - 5, x0 + 5, nt) for nt in x_list_diff2]
 
 pylab.clf()
 pylab.plot(x_list_diff2, y_list_diff2, 'b')
 pylab.savefig("f1_diff_cheb.png")
 
 
-x_list_diff_of_diff = [i for i in range(5, 51)]
-y_list_diff_of_diff = [y_list_diff[i] - y_list_diff2[i] for i in range(0, len(x_list_diff_of_diff))]
+x_list_diff2_log = [i for i in range(5, 51)]
+y_list_diff2_log = [math.log10(find_max_chebushev(fs, x0 - 5, x0 + 5, nt)) for nt in x_list_diff2_log]
 
 pylab.clf()
-pylab.plot(x_list_diff_of_diff, y_list_diff_of_diff, 'b')
-pylab.savefig("f1_diff_of_diff.png")
+pylab.plot(x_list_diff2_log, y_list_diff2_log, 'b')
+pylab.savefig("f1_diff_cheb_log.png")
+
 
 # task D
 x_list_diff3 = [i for i in range(5, 51)]
@@ -125,6 +134,13 @@ pylab.clf()
 pylab.plot(x_list_diff3, y_list_diff3, 'b')
 pylab.savefig("f2_diff.png")
 
+x_list_diff3_log = [i for i in range(5, 51)]
+y_list_diff3_log = [math.log10(find_max(fm, 0, 2, nt)) for nt in x_list_diff3_log]
+ 
+pylab.clf()
+pylab.plot(x_list_diff3_log, y_list_diff3_log, 'b')
+pylab.savefig("f2_diff_log.png")
+
 
 x_list_diff4 = [i for i in range(5, 51)]
 y_list_diff4 = [find_max_chebushev(fm, 0, 2, nt) for nt in x_list_diff4]
@@ -132,6 +148,13 @@ y_list_diff4 = [find_max_chebushev(fm, 0, 2, nt) for nt in x_list_diff4]
 pylab.clf()
 pylab.plot(x_list_diff4, y_list_diff4, 'b')
 pylab.savefig("f2_diff_cheb.png")
+
+x_list_diff4_log = [i for i in range(5, 51)]
+y_list_diff4_log = [math.log10(find_max_chebushev(fm, 0, 2, nt)) for nt in x_list_diff4_log]
+
+pylab.clf()
+pylab.plot(x_list_diff4_log, y_list_diff4_log, 'b')
+pylab.savefig("f2_diff_cheb_log.png")
 
 
 
